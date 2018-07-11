@@ -18,12 +18,24 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+      usingCors: true,
+      apiURL: 'http://lvh.me:3000'
+    },
+    contentSecurityPolicyHeader: 'Content-Security-Policy',
+    contentSecurityPolicy: {
+      'default-src': [ "'none'" ],
+      'script-src':  [ "'self'" , "http://lvh.me:7020/livereload.js", "http://lvh.me:3000", "'unsafe-inline'" , "'unsafe-eval'" ],
+      'font-src':    [ "'self'"],
+      'connect-src': [ "'self'", "ws://lvh.me:7020/" , "http://lvh.me:3000"],
+      'img-src':     [ "'self'"],
+      'report-uri':  ["'localhost'"],
+      'style-src':   [ "'self'", "'unsafe-inline'" ],
+      'frame-src':   ["'none'"]
+    },
   };
 
   if (environment === 'development') {
+    ENV['ember-cli-mirage'] = { enabled: false };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
