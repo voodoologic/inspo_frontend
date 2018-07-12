@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Doug Headley <headley.douglas@gmail.com>
+MAINTAINER Doug Headley <dougheadley@pm.me>
 
 LABEL container=inspo-ember
 RUN apt-get update
@@ -43,11 +43,10 @@ RUN npm install -g bower --save
 ADD ./ /opt/inspo
 WORKDIR /opt/inspo
 
-RUN bower install faye --allow-root
 RUN bower install --allow-root
 # RUN yarn
 RUN npm install
-RUN ember build --environment ${STACK_ENV}
+RUN ember build --environment development
 #
 EXPOSE 5055
 

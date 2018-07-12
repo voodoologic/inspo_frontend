@@ -16,6 +16,23 @@
 
 <p>
   <strong>Email:</strong>
-  <span>{{model.email}}</span>
+  <span>{{model.emai}}</span>
 </p>
+
+<p>
+  <strong>Vote?:</strong>
+  <span>{{canVote}}</span>
+</p>
+
+<p>
+  <strong>roles</strong>
+</p>
+
+<ul>
+  {{#each model.roles as |role| }}
+    <li>
+      {{role.roleType}}
+    </li>
+  {{/each}}
+</ul>
 
