@@ -9,6 +9,10 @@ configure do
   set :public_folder, File.expand_path('dist')
 end
 
+use Rack::Auth::Basic, "Protected Area" do |username, password|
+  username == 'foo' && password == 'bar'
+end
+
 get '*' do
   # pass if keys_absent?
   send_file 'dist/index.html'
