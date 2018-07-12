@@ -24,9 +24,9 @@ module.exports = function(environment) {
     contentSecurityPolicyHeader: 'Content-Security-Policy',
     contentSecurityPolicy: {
       'default-src': [ "'none'" ],
-      'script-src':  [ "'self'" , "http://lvh.me:7020/livereload.js", "http://lvh.me:3000", "'unsafe-inline'" , "'unsafe-eval'" ],
+      'script-src':  [ "'self'" , "http://inspo-rails:3000", "http://lvh.me:7020/livereload.js", "http://lvh.me:3000", "'unsafe-inline'" , "'unsafe-eval'" ],
       'font-src':    [ "'self'"],
-      'connect-src': [ "'self'", "ws://lvh.me:7020/" , "http://lvh.me:3000"],
+      'connect-src': [ "'self'", "ws://lvh.me:7020/" , "http://lvh.me:3000", "http://inspo-rails:3000"],
       'img-src':     [ "'self'"],
       'report-uri':  ["'localhost'"],
       'style-src':   [ "'self'", "'unsafe-inline'" ],

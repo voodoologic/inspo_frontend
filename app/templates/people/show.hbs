@@ -43,11 +43,12 @@
 <ul>
   {{#each people as |candidate|}}
     {{#if candidate.isCandidate }}
-      {{#if true }}
-        <li>
-          {{candidate.id}} {{candidate.lastName}}
-        </li>
-      {{/if}}
+      <li>
+        {{candidate.id}} - {{candidate.firstName}} {{candidate.lastName}}
+
+        <button {{action 'vote' candidate}}> vote for {{candidate.firstName}}</button>
+      </li>
+
     {{/if}}
   {{/each}}
 </ul>

@@ -9,5 +9,10 @@ export default Controller.extend({
   // })
   candidates(){
     return this.get('people').filterBy('isCandidate', true)
+  },
+  actions: {
+    vote(candidate){
+      this.store.createRecord('vote', {voter: this.get('person'), candidate: candidate}).save();
+    }
   }
 });

@@ -7,6 +7,8 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   district: DS.belongsTo('district'),
   roles: DS.hasMany('role'),
+  voted_for: DS.belongsTo('vote', { inverse: 'voter' }),
+  voted_by: DS.hasMany('vote', { inverse: 'candidate' }),
   voteable: computed('roles', function(){
     return this.get('roles').any((role) => { return role.get('roleType') == 'voter'})
   }),
