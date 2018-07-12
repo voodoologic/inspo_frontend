@@ -20,8 +20,8 @@
 </p>
 
 <p>
-  <strong>Vote?:</strong>
-  <span>{{canVote}}</span>
+  <strong>Can Vote:</strong>
+  <span>{{model.voteable}}</span>
 </p>
 
 <p>
@@ -36,3 +36,21 @@
   {{/each}}
 </ul>
 
+<p>
+  district
+</p>
+<ul>
+  {{#each districts as |district|}}
+    <li>
+      {{district}}
+    </li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each candidates as |candidate|}}
+    <li>
+      {{candidate.id}} {{candidate.lastName}}
+    </li>
+  {{/each}}
+</ul>
