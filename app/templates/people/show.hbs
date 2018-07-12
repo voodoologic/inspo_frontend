@@ -37,20 +37,17 @@
 </ul>
 
 <p>
-  district
+  district candidates:
 </p>
-<ul>
-  {{#each districts as |district|}}
-    <li>
-      {{district}}
-    </li>
-  {{/each}}
-</ul>
 
 <ul>
-  {{#each candidates as |candidate|}}
-    <li>
-      {{candidate.id}} {{candidate.lastName}}
-    </li>
+  {{#each people as |candidate|}}
+    {{#if candidate.isCandidate }}
+      {{#if true }}
+        <li>
+          {{candidate.id}} {{candidate.lastName}}
+        </li>
+      {{/if}}
+    {{/if}}
   {{/each}}
 </ul>

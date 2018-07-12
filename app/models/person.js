@@ -11,12 +11,7 @@ export default DS.Model.extend({
     return this.get('roles').any((role) => { return role.get('roleType') == 'voter'})
   }),
   isCandidate: computed('roles.[]', function(){
-    return this.get('roles').then(
-      (data)=> {
-        data.any((role) => {
-        role.get('roleType') == 'candidate'
-      })
-    })
+    return this.get('roles').any((role) => role.get('roleType') == 'candidate' )
   })
 
 });

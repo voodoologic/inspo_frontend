@@ -3,7 +3,7 @@ require 'haml'
 require 'pry'
 
 configure do
-  set :port, 5055
+  set :port, 4200
   set :environment, :developtment
   set :root, File.realpath(File.dirname(__FILE__))
   set :public_folder, File.expand_path('dist')

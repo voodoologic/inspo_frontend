@@ -6,9 +6,10 @@ export default Ember.Route.extend( {
     let person = controller.set('person', model);
     let people = null;
     this.get('store').find('district', parseInt(person.id)).then((data) => {
+      controller.set('district', data)
       let person_ids = data.store.peekAll('person').map( (person) =>  person.id  )
       this.get('store').query('person', { ids: person_ids }).then(function(data){
-        controller.set('people', data.content)
+        controller.set('people', data)
       })
     })
   },

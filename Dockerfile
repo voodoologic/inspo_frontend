@@ -38,13 +38,10 @@ RUN bundle
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install install -g
 RUN npm install -g ember-cli --save
-RUN npm install -g bower --save
 
 ADD ./ /opt/inspo
 WORKDIR /opt/inspo
 
-RUN bower install --allow-root
-# RUN yarn
 RUN npm install
 RUN ember build --environment development
 #
