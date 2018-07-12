@@ -1,0 +1,36 @@
+<h1>Votes list</h1>
+
+<p>
+  {{link-to "New Vote" "votes.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |vote|}}
+        <tr>
+          <td>
+            {{link-to "Edit" "votes.edit" vote}}
+          </td>
+          <td>
+            {{link-to "Show" "votes.show" vote}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" vote}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Votes found
+  </p>
+{{/if}}

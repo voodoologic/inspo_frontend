@@ -1,0 +1,22 @@
+<p>
+  {{link-to "District list" "districts.index" }}
+</p>
+
+<h1>District show</h1>
+
+<p>
+  <strong>Name:</strong>
+  <span>{{model.name}}</span>
+  <strong>State:</strong>
+  <span>{{model.state.name}}</span>
+</p>
+<ul>
+  {{#each model.people as |person|}}
+    <li>
+      {{#link-to 'people.show' person.id}}
+        {{person.firstName}} {{person.lastName}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+

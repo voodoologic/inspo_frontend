@@ -1,0 +1,42 @@
+<h1>Roles list</h1>
+
+<p>
+  {{link-to "New Role" "roles.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |role|}}
+        <tr>
+          <td>
+            {{role.name}}
+          </td>
+          <td>
+            {{link-to "Edit" "roles.edit" role}}
+          </td>
+          <td>
+            {{link-to "Show" "roles.show" role}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" role}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Roles found
+  </p>
+{{/if}}

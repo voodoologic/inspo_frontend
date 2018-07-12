@@ -1,0 +1,48 @@
+<h1>Districts list</h1>
+
+<p>
+  {{link-to "New District" "districts.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          State
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |district|}}
+        <tr>
+          <td>
+            {{district.name}}
+          </td>
+          <td>
+            {{district.state.name}}
+          </td>
+          <td>
+            {{link-to "Edit" "districts.edit" district}}
+          </td>
+          <td>
+            {{link-to "Show" "districts.show" district}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" district}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Districts found
+  </p>
+{{/if}}

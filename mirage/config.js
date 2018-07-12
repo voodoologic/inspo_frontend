@@ -1,4 +1,24 @@
 export default function() {
+this.get('/votes');
+this.get('/votes/:id');
+this.post('/votes');
+this.del('/votes/:id');
+this.patch('/votes/:id');
+this.get('/roles');
+this.get('/roles/:id');
+this.post('/roles');
+this.del('/roles/:id');
+this.patch('/roles/:id');
+this.get('/districts');
+this.get('/districts/:id');
+this.post('/districts');
+this.del('/districts/:id');
+this.patch('/districts/:id');
+this.get('/states');
+this.get('/states/:id');
+this.post('/states');
+this.del('/states/:id');
+this.patch('/states/:id');
 this.get('/people');
 this.get('/people/:id');
 this.post('/people');
