@@ -12,7 +12,10 @@ export default Controller.extend({
   },
   actions: {
     vote(candidate){
-      this.store.createRecord('vote', {voter: this.get('person'), candidate: candidate}).save();
+      let vote = this.store.createRecord('vote', {})
+      vote.set('voter', this.get('person'))
+      vote.set('candidate', candidate)
+      vote.save();
     }
   }
 });
